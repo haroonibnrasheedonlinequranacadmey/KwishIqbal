@@ -1,0 +1,5 @@
+<?php
+require_once __DIR__ . '/../includes/config.php';
+require_admin();
+?>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title><?= e($adminTitle ?? 'Admin') ?> | Kawish Portfolio</title><link rel="stylesheet" href="../assets/css/style.css"></head><body class="admin-body"><div class="admin-layout"><aside class="admin-sidebar"><a class="brand" href="../index.php"><span class="brand-mark">&lt;/&gt;</span><span>Kawish <b>Iqbal</b><small>ADMIN PANEL</small></span></a><nav><a href="index.php">▦ Dashboard</a><a href="projects.php">▣ Projects</a><a href="messages.php">✉ Messages</a><a href="settings.php">⚙ Settings</a><a href="../index.php" target="_blank">↗ View website</a></nav><form action="logout.php" method="post"><input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><button class="admin-logout">Log out ↗</button></form></aside><main class="admin-main"><div class="admin-topbar"><span>Portfolio management</span><span>Signed in as <?= e((string)($_SESSION['admin_name'] ?? 'Admin')) ?></span></div>
